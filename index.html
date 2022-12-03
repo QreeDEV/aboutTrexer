@@ -119,6 +119,28 @@
         isPlaying = !isPlaying;
     }
 </script>
+    
+<script>
+    function detectMobileDevice(agent) {
+        const mobileRegex = [
+            /Android/i,
+            /iPhone/i,
+            /iPad/i,
+            /iPod/i,
+            /BlackBerry/i,
+            /Windows Phone/i
+        ]
+
+        return mobileRegex.some(mobile => agent.match(mobile))
+    }
+
+    const isMobile = detectMobileDevice(window.navigator.userAgent)
+
+    if (isMobile) {
+        stop();
+    }
+</script>
+    
 <script>
     $(document).one("click", function (event) {
         $target = $(event.target);
@@ -132,6 +154,7 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script type="text/javascript">
 
+    
 
 function redirect1() {
     Swal.fire({
