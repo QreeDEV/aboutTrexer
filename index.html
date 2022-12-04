@@ -123,26 +123,7 @@
     }
 </script>
     
-<script>
-    function detectMobileDevice(agent) {
-        const mobileRegex = [
-            /Android/i,
-            /iPhone/i,
-            /iPad/i,
-            /iPod/i,
-            /BlackBerry/i,
-            /Windows Phone/i
-        ]
 
-        return mobileRegex.some(mobile => agent.match(mobile))
-    }
-
-    const isMobile = detectMobileDevice(window.navigator.userAgent)
-
-    if (isMobile) {
-        stop();
-    }
-</script>
     
 <script>
     $(document).one("click", function (event) {
